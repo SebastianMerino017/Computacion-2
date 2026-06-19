@@ -32,6 +32,25 @@ def loop_display(stdscr, snapshot_compartido, intervalo, evento_apagado):
             stdscr.addstr(fila, 0, linea)
             fila += 1
 
+        fila += 1
+        if fila < altura - 1:
+            stdscr.addstr(fila, 0, "--- MEMORIA ---")
+            fila += 1
+
+        if fila < altura - 1:
+            stdscr.addstr(fila, 0, "PID".ljust(8) + "VmRSS".ljust(15) + "VmSize".ljust(15) + "VmSwap")
+            fila += 1
+
+        datos_memoria = snapshot_compartido.get('memoria', {})
+
+        for pid, datos in datos_memoria.items():
+            if fila >= altura - 1:
+                break
+            linea = (str(pid).ljust(8) + str(datos['vmrss']).ljust(15) +
+                     str(datos['vmsize']).ljust(15) + str(datos['vmswap']))
+            stdscr.addstr(fila, 0, linea)
+            fila += 1
+
         stdscr.refresh()
 
         tecla = stdscr.getch()

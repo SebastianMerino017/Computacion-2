@@ -5,6 +5,7 @@ import time
 import traceback
 from recolector import correr_recolector
 from analizadores.resumen import correr_resumen
+from analizadores.memoria import correr_memoria
 from display import correr_display
 from senales import configurar_handlers
 
@@ -33,6 +34,11 @@ def main():
         procesos.append(multiprocessing.Process(
             target=correr_resumen,
             args=(pids, snapshot, 2, evento_apagado)
+        ))
+
+        procesos.append(multiprocessing.Process(
+            target=correr_memoria,
+            args=(pids, snapshot, 3, evento_apagado)
         ))
 
         procesos.append(multiprocessing.Process(
