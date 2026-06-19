@@ -51,6 +51,26 @@ def loop_display(stdscr, snapshot_compartido, intervalo, evento_apagado):
             stdscr.addstr(fila, 0, linea)
             fila += 1
 
+        fila += 1
+        if fila < altura - 1:
+            stdscr.addstr(fila, 0, "--- THREADS ---")
+            fila += 1
+
+        if fila < altura - 1:
+            stdscr.addstr(fila, 0, "PID".ljust(8) + "TID".ljust(8) + "NOMBRE".ljust(20) + "ESTADO")
+            fila += 1
+
+        datos_threads = snapshot_compartido.get('threads', {})
+
+        for pid, threads in datos_threads.items():
+            for t in threads:
+                if fila >= altura - 1:
+                    break
+                linea = (str(pid).ljust(8) + str(t['tid']).ljust(8) +
+                         t['nombre'].ljust(20) + t['estado'])
+                stdscr.addstr(fila, 0, linea)
+                fila += 1
+
         stdscr.refresh()
 
         tecla = stdscr.getch()
