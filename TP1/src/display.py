@@ -56,7 +56,7 @@ def loop_display(stdscr, snapshot_compartido, intervalo, evento_apagado):
         elif vista_activa == 5:
             fila = dibujar_senales(stdscr, snapshot_compartido, fila, altura, ancho)
         elif vista_activa == 6:
-            stdscr.addstr(fila, 0, "Vista Scheduling - proximamente")
+            fila = dibujar_scheduling(stdscr, snapshot_compartido, fila, altura, ancho)
         elif vista_activa == 7:
             stdscr.addstr(fila, 0, "Vista Sistema - proximamente")
 
@@ -143,4 +143,21 @@ def dibujar_senales(stdscr, snapshot, fila, altura, ancho):
                          ', '.join(senales))
                 stdscr.addstr(fila, 0, linea[:ancho-1])
                 fila += 1
+    return fila
+
+
+def dibujar_scheduling(stdscr, snapshot, fila, altura, ancho):
+    stdscr.addstr(fila, 0, "PID".ljust(8) + "NOMBRE".ljust(20) + "PRIO".ljust(6) +
+                  "NICE".ljust(6) + "POLITICA".ljust(10) + "VOL_CTX".ljust(10) + "INVOL_CTX")
+    fila += 1
+    datos = snapshot.get('scheduling', {})
+    for pid, d in datos.items():
+        if fila >= altura - 1:
+            break
+        linea = (str(pid).ljust(8) + d['nombre'].ljust(20) +
+                 str(d['prioridad']).ljust(6) + str(d['nice']).ljust(6) +
+                 d['politica'].ljust(10) + str(d['voluntary_ctx']).ljust(10) +
+                 str(d['involuntary_ctx']))
+        stdscr.addstr(fila, 0, linea[:ancho-1])
+        fila += 1
     return fila
