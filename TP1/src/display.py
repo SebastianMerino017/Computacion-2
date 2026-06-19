@@ -39,7 +39,6 @@ def loop_display(stdscr, snapshot_compartido, intervalo, evento_apagado):
         stdscr.clear()
         altura, ancho = stdscr.getmaxyx()
 
-        # Encabezado
         titulo = f"MONITOR DE PROCESOS | Vista: {VISTAS[vista_activa]} | teclas 1-7 | q=salir"
         stdscr.addstr(0, 0, titulo[:ancho-1])
         stdscr.addstr(1, 0, "-" * (ancho - 1))
@@ -55,7 +54,7 @@ def loop_display(stdscr, snapshot_compartido, intervalo, evento_apagado):
         elif vista_activa == 4:
             fila = dibujar_threads(stdscr, snapshot_compartido, fila, altura, ancho)
         elif vista_activa == 5:
-            stdscr.addstr(fila, 0, "Vista Senales - proximamente")
+            fila = dibujar_senales(stdscr, snapshot_compartido, fila, altura, ancho)
         elif vista_activa == 6:
             stdscr.addstr(fila, 0, "Vista Scheduling - proximamente")
         elif vista_activa == 7:
@@ -128,4 +127,20 @@ def dibujar_threads(stdscr, snapshot, fila, altura, ancho):
                      t['nombre'].ljust(20) + t['estado'])
             stdscr.addstr(fila, 0, linea[:ancho-1])
             fila += 1
+    return fila
+
+
+def dibujar_senales(stdscr, snapshot, fila, altura, ancho):
+    stdscr.addstr(fila, 0, "PID".ljust(8) + "CATEGORIA".ljust(14) + "SENALES")
+    fila += 1
+    datos = snapshot.get('senales', {})
+    for pid, d in datos.items():
+        for categoria, senales in d.items():
+            if fila >= altura - 1:
+                break
+            if senales:
+                linea = (str(pid).ljust(8) + categoria.ljust(14) +
+                         ', '.join(senales))
+                stdscr.addstr(fila, 0, linea[:ancho-1])
+                fila += 1
     return fila
