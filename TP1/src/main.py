@@ -7,6 +7,7 @@ from recolector import correr_recolector
 from analizadores.resumen import correr_resumen
 from analizadores.memoria import correr_memoria
 from analizadores.threads import correr_threads
+from analizadores.fds import correr_fds
 from display import correr_display
 from senales import configurar_handlers
 
@@ -45,6 +46,11 @@ def main():
         procesos.append(multiprocessing.Process(
             target=correr_threads,
             args=(pids, snapshot, 2, evento_apagado)
+        ))
+
+        procesos.append(multiprocessing.Process(
+            target=correr_fds,
+            args=(pids, snapshot, 5, evento_apagado)
         ))
 
         procesos.append(multiprocessing.Process(
