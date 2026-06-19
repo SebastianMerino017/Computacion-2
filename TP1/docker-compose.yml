@@ -1,0 +1,8 @@
+services:
+  monitor:
+    build: .
+    tty: true
+    stdin_open: true
+    volumes:
+      - ./src:/app/src
+      - ./config.json:/app/config.json
