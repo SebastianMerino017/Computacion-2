@@ -58,7 +58,7 @@ def loop_display(stdscr, snapshot_compartido, intervalo, evento_apagado):
         elif vista_activa == 6:
             fila = dibujar_scheduling(stdscr, snapshot_compartido, fila, altura, ancho)
         elif vista_activa == 7:
-            stdscr.addstr(fila, 0, "Vista Sistema - proximamente")
+            fila = dibujar_sistema(stdscr, snapshot_compartido, fila, altura, ancho)
 
         stdscr.refresh()
 
@@ -160,4 +160,39 @@ def dibujar_scheduling(stdscr, snapshot, fila, altura, ancho):
                  str(d['involuntary_ctx']))
         stdscr.addstr(fila, 0, linea[:ancho-1])
         fila += 1
+    return fila
+
+
+def dibujar_sistema(stdscr, snapshot, fila, altura, ancho):
+    datos = snapshot.get('sistema', {})
+    if not datos:
+        stdscr.addstr(fila, 0, "Cargando datos del sistema...")
+        return fila
+
+    stdscr.addstr(fila, 0, f"Uptime: {datos['uptime']}")
+    fila += 1
+    stdscr.addstr(fila, 0, f"CPU uso: {datos['cpu_uso']}%")
+    fila += 1
+    stdscr.addstr(fila, 0, f"Load average: {datos['load_avg1']} {datos['load_avg5']} {datos['load_avg15']}")
+    fila += 1
+    stdscr.addstr(fila, 0, f"Procesos activos: {datos['procesos']}")
+    fila += 2
+
+    stdscr.addstr(fila, 0, "--- MEMORIA ---")
+    fila += 1
+    stdscr.addstr(fila, 0, f"Total:      {datos['mem_total']}")
+    fila += 1
+    stdscr.addstr(fila, 0, f"Libre:      {datos['mem_libre']}")
+    fila += 1
+    stdscr.addstr(fila, 0, f"Disponible: {datos['mem_disponible']}")
+    fila += 1
+    stdscr.addstr(fila, 0, f"Buffers:    {datos['buffers']}")
+    fila += 1
+    stdscr.addstr(fila, 0, f"Cached:     {datos['cached']}")
+    fila += 1
+    stdscr.addstr(fila, 0, f"Swap total: {datos['swap_total']}")
+    fila += 1
+    stdscr.addstr(fila, 0, f"Swap libre: {datos['swap_libre']}")
+    fila += 1
+
     return fila

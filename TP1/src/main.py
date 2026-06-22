@@ -10,6 +10,7 @@ from analizadores.threads import correr_threads
 from analizadores.fds import correr_fds
 from analizadores.senales import correr_senales
 from analizadores.scheduling import correr_scheduling
+from analizadores.sistema import correr_sistema
 from display import correr_display
 from senales import configurar_handlers
 
@@ -63,6 +64,11 @@ def main():
         procesos.append(multiprocessing.Process(
             target=correr_scheduling,
             args=(pids, snapshot, 10, evento_apagado)
+        ))
+
+        procesos.append(multiprocessing.Process(
+            target=correr_sistema,
+            args=(pids, snapshot, 2, evento_apagado)
         ))
 
         procesos.append(multiprocessing.Process(
