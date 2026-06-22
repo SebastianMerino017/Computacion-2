@@ -1,0 +1,15 @@
+{
+    "intervalos": {
+        "recolector": 1,
+        "resumen": 2,
+        "memoria": 3,
+        "threads": 2,
+        "fds": 5,
+        "senales": 10,
+        "scheduling": 10,
+        "sistema": 2
+    },
+    "display": {
+        "intervalo": 0.5
+    }
+}

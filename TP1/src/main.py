@@ -3,6 +3,7 @@
 import multiprocessing
 import time
 import traceback
+import json
 from recolector import correr_recolector
 from analizadores.resumen import correr_resumen
 from analizadores.memoria import correr_memoria
@@ -20,8 +21,17 @@ def log_error(mensaje):
         f.write(mensaje + '\n')
 
 
+def cargar_config():
+    with open('config.json', 'r') as f:
+        return json.load(f)
+
+
 def main():
     try:
+        config = cargar_config()
+        intervalos = config['intervalos']
+        intervalo_display = config['display']['intervalo']
+
         evento_apagado = multiprocessing.Event()
         configurar_handlers(evento_apagado)
 
@@ -33,47 +43,47 @@ def main():
 
         procesos.append(multiprocessing.Process(
             target=correr_recolector,
-            args=(pids, 1, evento_apagado)
+            args=(pids, intervalos['recolector'], evento_apagado)
         ))
 
         procesos.append(multiprocessing.Process(
             target=correr_resumen,
-            args=(pids, snapshot, 2, evento_apagado)
+            args=(pids, snapshot, intervalos['resumen'], evento_apagado)
         ))
 
         procesos.append(multiprocessing.Process(
             target=correr_memoria,
-            args=(pids, snapshot, 3, evento_apagado)
+            args=(pids, snapshot, intervalos['memoria'], evento_apagado)
         ))
 
         procesos.append(multiprocessing.Process(
             target=correr_threads,
-            args=(pids, snapshot, 2, evento_apagado)
+            args=(pids, snapshot, intervalos['threads'], evento_apagado)
         ))
 
         procesos.append(multiprocessing.Process(
             target=correr_fds,
-            args=(pids, snapshot, 5, evento_apagado)
+            args=(pids, snapshot, intervalos['fds'], evento_apagado)
         ))
 
         procesos.append(multiprocessing.Process(
             target=correr_senales,
-            args=(pids, snapshot, 10, evento_apagado)
+            args=(pids, snapshot, intervalos['senales'], evento_apagado)
         ))
 
         procesos.append(multiprocessing.Process(
             target=correr_scheduling,
-            args=(pids, snapshot, 10, evento_apagado)
+            args=(pids, snapshot, intervalos['scheduling'], evento_apagado)
         ))
 
         procesos.append(multiprocessing.Process(
             target=correr_sistema,
-            args=(pids, snapshot, 2, evento_apagado)
+            args=(pids, snapshot, intervalos['sistema'], evento_apagado)
         ))
 
         procesos.append(multiprocessing.Process(
             target=correr_display,
-            args=(snapshot, 0.5, evento_apagado)
+            args=(snapshot, intervalo_display, evento_apagado)
         ))
 
         for p in procesos:
