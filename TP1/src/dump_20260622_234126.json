@@ -1,0 +1,1613 @@
+{
+  "resumen": {
+    "1": {
+      "pid": 1,
+      "ppid": "0",
+      "estado": "S",
+      "nombre": "python",
+      "threads": "1"
+    },
+    "7": {
+      "pid": 7,
+      "ppid": "1",
+      "estado": "S",
+      "nombre": "python",
+      "threads": "11"
+    },
+    "15": {
+      "pid": 15,
+      "ppid": "1",
+      "estado": "S",
+      "nombre": "python",
+      "threads": "1"
+    },
+    "16": {
+      "pid": 16,
+      "ppid": "1",
+      "estado": "R",
+      "nombre": "python",
+      "threads": "1"
+    },
+    "18": {
+      "pid": 18,
+      "ppid": "1",
+      "estado": "S",
+      "nombre": "python",
+      "threads": "1"
+    },
+    "20": {
+      "pid": 20,
+      "ppid": "1",
+      "estado": "S",
+      "nombre": "python",
+      "threads": "1"
+    },
+    "24": {
+      "pid": 24,
+      "ppid": "1",
+      "estado": "S",
+      "nombre": "python",
+      "threads": "1"
+    },
+    "29": {
+      "pid": 29,
+      "ppid": "1",
+      "estado": "S",
+      "nombre": "python",
+      "threads": "1"
+    },
+    "31": {
+      "pid": 31,
+      "ppid": "1",
+      "estado": "S",
+      "nombre": "python",
+      "threads": "1"
+    },
+    "35": {
+      "pid": 35,
+      "ppid": "1",
+      "estado": "S",
+      "nombre": "python",
+      "threads": "1"
+    },
+    "38": {
+      "pid": 38,
+      "ppid": "1",
+      "estado": "S",
+      "nombre": "python",
+      "threads": "1"
+    }
+  },
+  "memoria": {
+    "1": {
+      "vmsize": "28132 kB",
+      "vmrss": "21340 kB",
+      "vmdata": "11432 kB",
+      "vmstk": "132 kB",
+      "vmexe": "4 kB",
+      "vmlib": "9188 kB",
+      "vmhwm": "21340 kB",
+      "vmswap": "0 kB"
+    },
+    "7": {
+      "vmsize": "765612 kB",
+      "vmrss": "16728 kB",
+      "vmdata": "94832 kB",
+      "vmstk": "132 kB",
+      "vmexe": "4 kB",
+      "vmlib": "9188 kB",
+      "vmhwm": "16728 kB",
+      "vmswap": "0 kB"
+    },
+    "15": {
+      "vmsize": "28132 kB",
+      "vmrss": "15216 kB",
+      "vmdata": "11432 kB",
+      "vmstk": "132 kB",
+      "vmexe": "4 kB",
+      "vmlib": "9188 kB",
+      "vmhwm": "15216 kB",
+      "vmswap": "0 kB"
+    },
+    "16": {
+      "vmsize": "28132 kB",
+      "vmrss": "15368 kB",
+      "vmdata": "11432 kB",
+      "vmstk": "132 kB",
+      "vmexe": "4 kB",
+      "vmlib": "9188 kB",
+      "vmhwm": "15368 kB",
+      "vmswap": "0 kB"
+    },
+    "18": {
+      "vmsize": "28132 kB",
+      "vmrss": "15336 kB",
+      "vmdata": "11432 kB",
+      "vmstk": "132 kB",
+      "vmexe": "4 kB",
+      "vmlib": "9188 kB",
+      "vmhwm": "15336 kB",
+      "vmswap": "0 kB"
+    },
+    "20": {
+      "vmsize": "28132 kB",
+      "vmrss": "15664 kB",
+      "vmdata": "11432 kB",
+      "vmstk": "132 kB",
+      "vmexe": "4 kB",
+      "vmlib": "9188 kB",
+      "vmhwm": "15664 kB",
+      "vmswap": "0 kB"
+    },
+    "24": {
+      "vmsize": "28132 kB",
+      "vmrss": "15576 kB",
+      "vmdata": "11432 kB",
+      "vmstk": "132 kB",
+      "vmexe": "4 kB",
+      "vmlib": "9188 kB",
+      "vmhwm": "15576 kB",
+      "vmswap": "0 kB"
+    },
+    "29": {
+      "vmsize": "28132 kB",
+      "vmrss": "15332 kB",
+      "vmdata": "11432 kB",
+      "vmstk": "132 kB",
+      "vmexe": "4 kB",
+      "vmlib": "9188 kB",
+      "vmhwm": "15332 kB",
+      "vmswap": "0 kB"
+    },
+    "31": {
+      "vmsize": "28132 kB",
+      "vmrss": "15368 kB",
+      "vmdata": "11432 kB",
+      "vmstk": "132 kB",
+      "vmexe": "4 kB",
+      "vmlib": "9188 kB",
+      "vmhwm": "15368 kB",
+      "vmswap": "0 kB"
+    },
+    "35": {
+      "vmsize": "28132 kB",
+      "vmrss": "15712 kB",
+      "vmdata": "11432 kB",
+      "vmstk": "132 kB",
+      "vmexe": "4 kB",
+      "vmlib": "9188 kB",
+      "vmhwm": "15712 kB",
+      "vmswap": "0 kB"
+    },
+    "38": {
+      "vmsize": "28132 kB",
+      "vmrss": "16312 kB",
+      "vmdata": "11432 kB",
+      "vmstk": "132 kB",
+      "vmexe": "4 kB",
+      "vmlib": "9188 kB",
+      "vmhwm": "16312 kB",
+      "vmswap": "0 kB"
+    }
+  },
+  "resumen_ts": 1782171686.1965196,
+  "memoria_ts": 1782171684.8185089,
+  "threads": {
+    "1": [
+      {
+        "tid": 1,
+        "nombre": "python",
+        "estado": "S"
+      }
+    ],
+    "7": [
+      {
+        "tid": 7,
+        "nombre": "python",
+        "estado": "S"
+      },
+      {
+        "tid": 8,
+        "nombre": "python",
+        "estado": "S"
+      },
+      {
+        "tid": 25,
+        "nombre": "python",
+        "estado": "S"
+      },
+      {
+        "tid": 28,
+        "nombre": "python",
+        "estado": "S"
+      },
+      {
+        "tid": 32,
+        "nombre": "python",
+        "estado": "S"
+      },
+      {
+        "tid": 36,
+        "nombre": "python",
+        "estado": "S"
+      },
+      {
+        "tid": 43,
+        "nombre": "python",
+        "estado": "S"
+      },
+      {
+        "tid": 45,
+        "nombre": "python",
+        "estado": "S"
+      },
+      {
+        "tid": 47,
+        "nombre": "python",
+        "estado": "S"
+      },
+      {
+        "tid": 48,
+        "nombre": "python",
+        "estado": "S"
+      },
+      {
+        "tid": 50,
+        "nombre": "python",
+        "estado": "S"
+      }
+    ],
+    "15": [
+      {
+        "tid": 15,
+        "nombre": "python",
+        "estado": "S"
+      }
+    ],
+    "16": [
+      {
+        "tid": 16,
+        "nombre": "python",
+        "estado": "S"
+      }
+    ],
+    "18": [
+      {
+        "tid": 18,
+        "nombre": "python",
+        "estado": "S"
+      }
+    ],
+    "20": [
+      {
+        "tid": 20,
+        "nombre": "python",
+        "estado": "R"
+      }
+    ],
+    "24": [
+      {
+        "tid": 24,
+        "nombre": "python",
+        "estado": "S"
+      }
+    ],
+    "29": [
+      {
+        "tid": 29,
+        "nombre": "python",
+        "estado": "S"
+      }
+    ],
+    "31": [
+      {
+        "tid": 31,
+        "nombre": "python",
+        "estado": "S"
+      }
+    ],
+    "35": [
+      {
+        "tid": 35,
+        "nombre": "python",
+        "estado": "S"
+      }
+    ],
+    "38": [
+      {
+        "tid": 38,
+        "nombre": "python",
+        "estado": "S"
+      }
+    ]
+  },
+  "threads_ts": 1782171686.3339229,
+  "sistema": {
+    "cpu_uso": 11.6,
+    "mem_total": "5922928 kB",
+    "mem_libre": "178324 kB",
+    "mem_disponible": "1734280 kB",
+    "buffers": "44428 kB",
+    "cached": "1397232 kB",
+    "swap_total": "2097148 kB",
+    "swap_libre": "1288412 kB",
+    "load_avg1": "1.42",
+    "load_avg5": "1.21",
+    "load_avg15": "1.12",
+    "procesos": "1/1349",
+    "uptime": "4h 12m 54s"
+  },
+  "sistema_ts": 1782171685.6931736,
+  "senales": {
+    "1": {
+      "bloqueadas": [],
+      "ignoradas": [
+        "SIGPIPE",
+        "SIGXFSZ"
+      ],
+      "capturadas": [
+        "SIGINT",
+        "SIGUSR1",
+        "SIGTERM"
+      ],
+      "pendientes": []
+    },
+    "7": {
+      "bloqueadas": [],
+      "ignoradas": [
+        "SIGINT",
+        "SIGPIPE",
+        "SIGXFSZ"
+      ],
+      "capturadas": [
+        "SIG33"
+      ],
+      "pendientes": []
+    },
+    "15": {
+      "bloqueadas": [],
+      "ignoradas": [
+        "SIGPIPE",
+        "SIGXFSZ"
+      ],
+      "capturadas": [
+        "SIGINT",
+        "SIGUSR1",
+        "SIGTERM"
+      ],
+      "pendientes": []
+    },
+    "16": {
+      "bloqueadas": [],
+      "ignoradas": [
+        "SIGPIPE",
+        "SIGXFSZ"
+      ],
+      "capturadas": [
+        "SIGINT",
+        "SIGUSR1",
+        "SIGTERM"
+      ],
+      "pendientes": []
+    },
+    "18": {
+      "bloqueadas": [],
+      "ignoradas": [
+        "SIGPIPE",
+        "SIGXFSZ"
+      ],
+      "capturadas": [
+        "SIGINT",
+        "SIGUSR1",
+        "SIGTERM"
+      ],
+      "pendientes": []
+    },
+    "20": {
+      "bloqueadas": [],
+      "ignoradas": [
+        "SIGPIPE",
+        "SIGXFSZ"
+      ],
+      "capturadas": [
+        "SIGINT",
+        "SIGUSR1",
+        "SIGTERM"
+      ],
+      "pendientes": []
+    },
+    "24": {
+      "bloqueadas": [],
+      "ignoradas": [
+        "SIGPIPE",
+        "SIGXFSZ"
+      ],
+      "capturadas": [
+        "SIGINT",
+        "SIGUSR1",
+        "SIGTERM"
+      ],
+      "pendientes": []
+    },
+    "29": {
+      "bloqueadas": [],
+      "ignoradas": [
+        "SIGPIPE",
+        "SIGXFSZ"
+      ],
+      "capturadas": [
+        "SIGINT",
+        "SIGUSR1",
+        "SIGTERM"
+      ],
+      "pendientes": []
+    },
+    "31": {
+      "bloqueadas": [],
+      "ignoradas": [
+        "SIGPIPE",
+        "SIGXFSZ"
+      ],
+      "capturadas": [
+        "SIGINT",
+        "SIGUSR1",
+        "SIGTERM"
+      ],
+      "pendientes": []
+    },
+    "35": {
+      "bloqueadas": [],
+      "ignoradas": [
+        "SIGPIPE",
+        "SIGXFSZ"
+      ],
+      "capturadas": [
+        "SIGINT",
+        "SIGUSR1",
+        "SIGTERM"
+      ],
+      "pendientes": []
+    },
+    "38": {
+      "bloqueadas": [],
+      "ignoradas": [
+        "SIGPIPE",
+        "SIGXFSZ"
+      ],
+      "capturadas": [
+        "SIGINT",
+        "SIGUSR1",
+        "SIGTERM",
+        "SIGTSTP",
+        "SIGWINCH"
+      ],
+      "pendientes": []
+    }
+  },
+  "senales_ts": 1782171681.4584165,
+  "fds": {
+    "1": [
+      {
+        "fd": 0,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 1,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 2,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 3,
+        "destino": "pipe:[66653]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 4,
+        "destino": "pipe:[66655]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 5,
+        "destino": "pipe:[66649]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 6,
+        "destino": "pipe:[66657]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 7,
+        "destino": "pipe:[66654]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 8,
+        "destino": "pipe:[66650]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 9,
+        "destino": "pipe:[66659]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 10,
+        "destino": "pipe:[66656]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 11,
+        "destino": "pipe:[66661]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 12,
+        "destino": "pipe:[66658]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 13,
+        "destino": "pipe:[66663]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 14,
+        "destino": "pipe:[66660]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 15,
+        "destino": "pipe:[66665]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 16,
+        "destino": "pipe:[66662]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 17,
+        "destino": "pipe:[66667]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 18,
+        "destino": "pipe:[66664]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 19,
+        "destino": "pipe:[66669]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 20,
+        "destino": "pipe:[66666]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 22,
+        "destino": "pipe:[66668]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 24,
+        "destino": "pipe:[66670]",
+        "tipo": "pipe"
+      }
+    ],
+    "7": [
+      {
+        "fd": 0,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 1,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 2,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 3,
+        "destino": "pipe:[66648]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 4,
+        "destino": "socket:[59864]",
+        "tipo": "socket"
+      },
+      {
+        "fd": 5,
+        "destino": "/dev/null",
+        "tipo": "file"
+      },
+      {
+        "fd": 6,
+        "destino": "pipe:[66649]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 7,
+        "destino": "pipe:[66650]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 8,
+        "destino": "socket:[59009]",
+        "tipo": "socket"
+      },
+      {
+        "fd": 9,
+        "destino": "socket:[59868]",
+        "tipo": "socket"
+      },
+      {
+        "fd": 10,
+        "destino": "socket:[55917]",
+        "tipo": "socket"
+      },
+      {
+        "fd": 11,
+        "destino": "socket:[59867]",
+        "tipo": "socket"
+      },
+      {
+        "fd": 12,
+        "destino": "socket:[55913]",
+        "tipo": "socket"
+      },
+      {
+        "fd": 13,
+        "destino": "socket:[54147]",
+        "tipo": "socket"
+      },
+      {
+        "fd": 14,
+        "destino": "socket:[59871]",
+        "tipo": "socket"
+      },
+      {
+        "fd": 15,
+        "destino": "socket:[55915]",
+        "tipo": "socket"
+      },
+      {
+        "fd": 17,
+        "destino": "socket:[54149]",
+        "tipo": "socket"
+      }
+    ],
+    "15": [
+      {
+        "fd": 0,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 1,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 2,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 3,
+        "destino": "/dev/null",
+        "tipo": "file"
+      },
+      {
+        "fd": 4,
+        "destino": "pipe:[66653]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 5,
+        "destino": "pipe:[66649]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 6,
+        "destino": "pipe:[66654]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 7,
+        "destino": "socket:[65731]",
+        "tipo": "socket"
+      },
+      {
+        "fd": 8,
+        "destino": "pipe:[66650]",
+        "tipo": "pipe"
+      }
+    ],
+    "16": [
+      {
+        "fd": 0,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 1,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 2,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 3,
+        "destino": "pipe:[66653]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 4,
+        "destino": "/dev/null",
+        "tipo": "file"
+      },
+      {
+        "fd": 5,
+        "destino": "pipe:[66649]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 6,
+        "destino": "pipe:[66655]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 7,
+        "destino": "pipe:[66654]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 8,
+        "destino": "pipe:[66650]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 9,
+        "destino": "pipe:[66656]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 10,
+        "destino": "socket:[64688]",
+        "tipo": "socket"
+      }
+    ],
+    "18": [
+      {
+        "fd": 0,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 1,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 2,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 3,
+        "destino": "pipe:[66653]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 4,
+        "destino": "pipe:[66655]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 5,
+        "destino": "pipe:[66649]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 6,
+        "destino": "/dev/null",
+        "tipo": "file"
+      },
+      {
+        "fd": 7,
+        "destino": "pipe:[66654]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 8,
+        "destino": "pipe:[66650]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 9,
+        "destino": "pipe:[66657]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 10,
+        "destino": "pipe:[66656]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 11,
+        "destino": "pipe:[66658]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 12,
+        "destino": "socket:[61919]",
+        "tipo": "socket"
+      }
+    ],
+    "20": [
+      {
+        "fd": 0,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 1,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 2,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 3,
+        "destino": "pipe:[66653]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 4,
+        "destino": "pipe:[66655]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 5,
+        "destino": "pipe:[66649]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 6,
+        "destino": "pipe:[66657]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 7,
+        "destino": "pipe:[66654]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 8,
+        "destino": "pipe:[66650]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 9,
+        "destino": "/dev/null",
+        "tipo": "file"
+      },
+      {
+        "fd": 10,
+        "destino": "pipe:[66656]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 11,
+        "destino": "pipe:[66659]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 12,
+        "destino": "pipe:[66658]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 13,
+        "destino": "pipe:[66660]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 14,
+        "destino": "socket:[59872]",
+        "tipo": "socket"
+      }
+    ],
+    "24": [
+      {
+        "fd": 0,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 1,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 2,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 3,
+        "destino": "pipe:[66653]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 4,
+        "destino": "pipe:[66655]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 5,
+        "destino": "pipe:[66649]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 6,
+        "destino": "pipe:[66657]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 7,
+        "destino": "pipe:[66654]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 8,
+        "destino": "pipe:[66650]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 9,
+        "destino": "pipe:[66659]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 10,
+        "destino": "pipe:[66656]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 11,
+        "destino": "/dev/null",
+        "tipo": "file"
+      },
+      {
+        "fd": 12,
+        "destino": "pipe:[66658]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 13,
+        "destino": "pipe:[66661]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 14,
+        "destino": "pipe:[66660]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 15,
+        "destino": "pipe:[66662]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 16,
+        "destino": "socket:[55912]",
+        "tipo": "socket"
+      }
+    ],
+    "29": [
+      {
+        "fd": 0,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 1,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 2,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 3,
+        "destino": "pipe:[66653]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 4,
+        "destino": "pipe:[66655]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 5,
+        "destino": "pipe:[66649]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 6,
+        "destino": "pipe:[66657]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 7,
+        "destino": "pipe:[66654]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 8,
+        "destino": "pipe:[66650]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 9,
+        "destino": "pipe:[66659]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 10,
+        "destino": "pipe:[66656]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 11,
+        "destino": "pipe:[66661]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 12,
+        "destino": "pipe:[66658]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 13,
+        "destino": "/dev/null",
+        "tipo": "file"
+      },
+      {
+        "fd": 14,
+        "destino": "pipe:[66660]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 15,
+        "destino": "pipe:[66663]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 16,
+        "destino": "pipe:[66662]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 17,
+        "destino": "pipe:[66664]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 18,
+        "destino": "socket:[59017]",
+        "tipo": "socket"
+      }
+    ],
+    "31": [
+      {
+        "fd": 0,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 1,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 2,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 3,
+        "destino": "pipe:[66653]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 4,
+        "destino": "pipe:[66655]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 5,
+        "destino": "pipe:[66649]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 6,
+        "destino": "pipe:[66657]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 7,
+        "destino": "pipe:[66654]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 8,
+        "destino": "pipe:[66650]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 9,
+        "destino": "pipe:[66659]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 10,
+        "destino": "pipe:[66656]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 11,
+        "destino": "pipe:[66661]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 12,
+        "destino": "pipe:[66658]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 13,
+        "destino": "pipe:[66663]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 14,
+        "destino": "pipe:[66660]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 15,
+        "destino": "/dev/null",
+        "tipo": "file"
+      },
+      {
+        "fd": 16,
+        "destino": "pipe:[66662]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 17,
+        "destino": "pipe:[66665]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 18,
+        "destino": "pipe:[66664]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 19,
+        "destino": "pipe:[66666]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 20,
+        "destino": "socket:[54146]",
+        "tipo": "socket"
+      }
+    ],
+    "35": [
+      {
+        "fd": 0,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 1,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 2,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 3,
+        "destino": "pipe:[66653]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 4,
+        "destino": "pipe:[66655]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 5,
+        "destino": "pipe:[66649]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 6,
+        "destino": "pipe:[66657]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 7,
+        "destino": "pipe:[66654]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 8,
+        "destino": "pipe:[66650]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 9,
+        "destino": "pipe:[66659]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 10,
+        "destino": "pipe:[66656]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 11,
+        "destino": "pipe:[66661]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 12,
+        "destino": "pipe:[66658]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 13,
+        "destino": "pipe:[66663]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 14,
+        "destino": "pipe:[66660]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 15,
+        "destino": "pipe:[66665]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 16,
+        "destino": "pipe:[66662]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 17,
+        "destino": "/dev/null",
+        "tipo": "file"
+      },
+      {
+        "fd": 18,
+        "destino": "pipe:[66664]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 19,
+        "destino": "pipe:[66667]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 20,
+        "destino": "pipe:[66666]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 21,
+        "destino": "pipe:[66668]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 22,
+        "destino": "socket:[64701]",
+        "tipo": "socket"
+      }
+    ],
+    "38": [
+      {
+        "fd": 0,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 1,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 2,
+        "destino": "/dev/pts/0",
+        "tipo": "tty"
+      },
+      {
+        "fd": 3,
+        "destino": "pipe:[66653]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 4,
+        "destino": "pipe:[66655]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 5,
+        "destino": "pipe:[66649]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 6,
+        "destino": "pipe:[66657]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 7,
+        "destino": "pipe:[66654]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 8,
+        "destino": "pipe:[66650]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 9,
+        "destino": "pipe:[66659]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 10,
+        "destino": "pipe:[66656]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 11,
+        "destino": "pipe:[66661]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 12,
+        "destino": "pipe:[66658]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 13,
+        "destino": "pipe:[66663]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 14,
+        "destino": "pipe:[66660]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 15,
+        "destino": "pipe:[66665]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 16,
+        "destino": "pipe:[66662]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 17,
+        "destino": "pipe:[66667]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 18,
+        "destino": "pipe:[66664]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 19,
+        "destino": "/dev/null",
+        "tipo": "file"
+      },
+      {
+        "fd": 20,
+        "destino": "pipe:[66666]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 21,
+        "destino": "pipe:[66669]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 22,
+        "destino": "pipe:[66668]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 23,
+        "destino": "pipe:[66670]",
+        "tipo": "pipe"
+      },
+      {
+        "fd": 24,
+        "destino": "socket:[59018]",
+        "tipo": "socket"
+      }
+    ]
+  },
+  "fds_ts": 1782171681.6933098,
+  "scheduling": {
+    "1": {
+      "nombre": "python",
+      "prioridad": "1",
+      "nice": "0",
+      "politica": "NORMAL",
+      "rt_prioridad": "0",
+      "cpus_allowed": "0-11",
+      "voluntary_ctx": "3813",
+      "involuntary_ctx": "2",
+      "utime": "0",
+      "stime": "0"
+    },
+    "7": {
+      "nombre": "python",
+      "prioridad": "11",
+      "nice": "0",
+      "politica": "NORMAL",
+      "rt_prioridad": "0",
+      "cpus_allowed": "0-11",
+      "voluntary_ctx": "725",
+      "involuntary_ctx": "0",
+      "utime": "0",
+      "stime": "0"
+    },
+    "15": {
+      "nombre": "python",
+      "prioridad": "1",
+      "nice": "0",
+      "politica": "NORMAL",
+      "rt_prioridad": "0",
+      "cpus_allowed": "0-11",
+      "voluntary_ctx": "2169",
+      "involuntary_ctx": "1",
+      "utime": "0",
+      "stime": "0"
+    },
+    "16": {
+      "nombre": "python",
+      "prioridad": "1",
+      "nice": "0",
+      "politica": "NORMAL",
+      "rt_prioridad": "0",
+      "cpus_allowed": "0-11",
+      "voluntary_ctx": "10649",
+      "involuntary_ctx": "1",
+      "utime": "0",
+      "stime": "0"
+    },
+    "18": {
+      "nombre": "python",
+      "prioridad": "1",
+      "nice": "0",
+      "politica": "NORMAL",
+      "rt_prioridad": "0",
+      "cpus_allowed": "0-11",
+      "voluntary_ctx": "7195",
+      "involuntary_ctx": "0",
+      "utime": "0",
+      "stime": "0"
+    },
+    "20": {
+      "nombre": "python",
+      "prioridad": "1",
+      "nice": "0",
+      "politica": "NORMAL",
+      "rt_prioridad": "0",
+      "cpus_allowed": "0-11",
+      "voluntary_ctx": "10625",
+      "involuntary_ctx": "4",
+      "utime": "0",
+      "stime": "0"
+    },
+    "24": {
+      "nombre": "python",
+      "prioridad": "1",
+      "nice": "0",
+      "politica": "NORMAL",
+      "rt_prioridad": "0",
+      "cpus_allowed": "0-11",
+      "voluntary_ctx": "4282",
+      "involuntary_ctx": "4",
+      "utime": "0",
+      "stime": "0"
+    },
+    "29": {
+      "nombre": "python",
+      "prioridad": "1",
+      "nice": "0",
+      "politica": "NORMAL",
+      "rt_prioridad": "0",
+      "cpus_allowed": "0-11",
+      "voluntary_ctx": "2178",
+      "involuntary_ctx": "0",
+      "utime": "0",
+      "stime": "0"
+    },
+    "31": {
+      "nombre": "python",
+      "prioridad": "1",
+      "nice": "0",
+      "politica": "NORMAL",
+      "rt_prioridad": "0",
+      "cpus_allowed": "0-11",
+      "voluntary_ctx": "2223",
+      "involuntary_ctx": "0",
+      "utime": "0",
+      "stime": "0"
+    },
+    "35": {
+      "nombre": "python",
+      "prioridad": "1",
+      "nice": "0",
+      "politica": "NORMAL",
+      "rt_prioridad": "0",
+      "cpus_allowed": "0-11",
+      "voluntary_ctx": "1792",
+      "involuntary_ctx": "0",
+      "utime": "0",
+      "stime": "0"
+    },
+    "38": {
+      "nombre": "python",
+      "prioridad": "1",
+      "nice": "0",
+      "politica": "NORMAL",
+      "rt_prioridad": "0",
+      "cpus_allowed": "0-11",
+      "voluntary_ctx": "4315",
+      "involuntary_ctx": "83",
+      "utime": "0",
+      "stime": "0"
+    }
+  },
+  "scheduling_ts": 1782171681.5031965
+}

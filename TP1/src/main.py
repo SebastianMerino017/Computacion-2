@@ -33,11 +33,12 @@ def main():
         intervalo_display = config['display']['intervalo']
 
         evento_apagado = multiprocessing.Event()
-        configurar_handlers(evento_apagado)
 
         manager = multiprocessing.Manager()
         pids = manager.list()
         snapshot = manager.dict()
+
+        configurar_handlers(evento_apagado, snapshot)
 
         procesos = []
 
