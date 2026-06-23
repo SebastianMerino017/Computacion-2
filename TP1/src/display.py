@@ -72,7 +72,7 @@ def loop_display(stdscr, snapshot_compartido, intervalo, evento_apagado):
 
 
 def dibujar_resumen(stdscr, snapshot, fila, altura, ancho):
-    stdscr.addstr(fila, 0, "PID".ljust(8) + "PPID".ljust(8) + "NOMBRE".ljust(20) + "ESTADO".ljust(8) + "THREADS")
+    stdscr.addstr(fila, 0, "PID".ljust(8) + "PPID".ljust(8) + "NOMBRE".ljust(20) + "ESTADO".ljust(8) + "THREADS".ljust(10) + "CPU%")
     fila += 1
     datos = snapshot.get('resumen', {})
     for pid, d in datos.items():
@@ -80,7 +80,7 @@ def dibujar_resumen(stdscr, snapshot, fila, altura, ancho):
             break
         linea = (str(pid).ljust(8) + str(d['ppid']).ljust(8) +
                  d['nombre'].ljust(20) + d['estado'].ljust(8) +
-                 str(d['threads']))
+                 str(d['threads']).ljust(10) + str(d['cpu_pct']))
         stdscr.addstr(fila, 0, linea[:ancho-1])
         fila += 1
     return fila
