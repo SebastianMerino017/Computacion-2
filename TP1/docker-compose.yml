@@ -6,3 +6,4 @@ services:
     volumes:
       - ./src:/app/src
       - ./config.json:/app/config.json
+      - ./tests:/app/tests
