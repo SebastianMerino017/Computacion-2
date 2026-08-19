@@ -13,10 +13,9 @@ from analizadores.senales import correr_senales
 from analizadores.scheduling import correr_scheduling
 from analizadores.sistema import correr_sistema
 from display import correr_display
-from senales import configurar_handlers
+from senales import configurar_handlers, procesar_flags
 
 
-# Intervalos minimos por vista segun la consigna
 INTERVALOS_MINIMOS = {
     'resumen': 0.5,
     'memoria': 1.0,
@@ -51,7 +50,6 @@ def main():
         pids = manager.list()
         snapshot = manager.dict()
 
-        # Value compartido por analizador — el display puede modificarlos con +/-
         valores_intervalos = {
             'recolector': multiprocessing.Value('d', intervalos['recolector']),
             'resumen':    multiprocessing.Value('d', intervalos['resumen']),
@@ -63,7 +61,7 @@ def main():
             'sistema':    multiprocessing.Value('d', intervalos['sistema']),
         }
 
-        configurar_handlers(evento_apagado, snapshot)
+        configurar_handlers(evento_apagado, snapshot, valores_intervalos)
 
         procesos = []
 
@@ -117,6 +115,7 @@ def main():
             p.start()
 
         while not evento_apagado.is_set():
+            procesar_flags(snapshot, valores_intervalos)
             time.sleep(0.2)
 
         for p in procesos:

@@ -1,7 +1,7 @@
 {
     "intervalos": {
         "recolector": 1,
-        "resumen": 2,
+        "resumen": 5,
         "memoria": 3,
         "threads": 2,
         "fds": 5,
