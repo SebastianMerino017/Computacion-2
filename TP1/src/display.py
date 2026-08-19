@@ -1,7 +1,6 @@
 # display.py - Proceso que renderiza la interfaz de texto (TUI) usando curses
 
 import curses
-import time
 
 
 VISTAS = {
@@ -135,15 +134,24 @@ def dibujar_resumen(stdscr, snapshot, fila, altura, ancho):
 
 def dibujar_memoria(stdscr, snapshot, fila, altura, ancho):
     stdscr.addstr(fila, 0,
-        "PID".ljust(8) + "VmRSS".ljust(15) + "VmSize".ljust(15) + "VmSwap",
+        "PID".ljust(8) + "VmRSS".ljust(12) + "VmSize".ljust(12) +
+        "VmSwap".ljust(10) + "TEXT".ljust(8) + "DATA".ljust(8) +
+        "HEAP".ljust(8) + "STACK",
         curses.color_pair(COLOR_HEADER) | curses.A_BOLD)
     fila += 1
     datos = snapshot.get('memoria', {})
     for pid, d in datos.items():
         if fila >= altura - 1:
             break
-        linea = (str(pid).ljust(8) + str(d['vmrss']).ljust(15) +
-                 str(d['vmsize']).ljust(15) + str(d['vmswap']))
+        maps = d.get('maps', {})
+        linea = (str(pid).ljust(8) +
+                 str(d['vmrss']).ljust(12) +
+                 str(d['vmsize']).ljust(12) +
+                 str(d['vmswap']).ljust(10) +
+                 f"{maps.get('text', 0)}kB".ljust(8) +
+                 f"{maps.get('data', 0)}kB".ljust(8) +
+                 f"{maps.get('heap', 0)}kB".ljust(8) +
+                 f"{maps.get('stack', 0)}kB")
         stdscr.addstr(fila, 0, linea[:ancho-1], curses.color_pair(COLOR_NORMAL))
         fila += 1
     return fila
