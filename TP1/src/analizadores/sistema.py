@@ -1,29 +1,21 @@
-# analizadores/sistema.py - Analizador que extrae stats globales del sistema
+# analizadores/sistema.py
 
 import time
 import os
 
 
 def leer_cpu():
-    # Lee /proc/stat y calcula porcentajes de CPU
     with open('/proc/stat', 'r') as f:
         linea = f.readline()
     campos = linea.split()
-    # campos: cpu user nice system idle iowait irq softirq steal
     user = int(campos[1])
     nice = int(campos[2])
     system = int(campos[3])
     idle = int(campos[4])
     iowait = int(campos[5])
     total = user + nice + system + idle + iowait
-    return {
-        'user': user,
-        'nice': nice,
-        'system': system,
-        'idle': idle,
-        'iowait': iowait,
-        'total': total
-    }
+    return {'user': user, 'nice': nice, 'system': system,
+            'idle': idle, 'iowait': iowait, 'total': total}
 
 
 def leer_meminfo():
@@ -38,12 +30,8 @@ def leer_meminfo():
 def leer_loadavg():
     with open('/proc/loadavg', 'r') as f:
         contenido = f.read().split()
-    return {
-        'avg1': contenido[0],
-        'avg5': contenido[1],
-        'avg15': contenido[2],
-        'procesos': contenido[3]
-    }
+    return {'avg1': contenido[0], 'avg5': contenido[1],
+            'avg15': contenido[2], 'procesos': contenido[3]}
 
 
 def leer_uptime():
@@ -56,20 +44,16 @@ def leer_uptime():
     return f'{horas}h {minutos}m {segs}s'
 
 
-def correr_sistema(pids_compartidos, snapshot, intervalo, evento_apagado):
+def correr_sistema(pids_compartidos, snapshot, intervalo_value, evento_apagado):
     cpu_anterior = None
 
     while not evento_apagado.is_set():
         try:
-            # CPU con delta entre dos lecturas
             cpu_actual = leer_cpu()
             if cpu_anterior is not None:
                 delta_total = cpu_actual['total'] - cpu_anterior['total']
                 delta_idle = cpu_actual['idle'] - cpu_anterior['idle']
-                if delta_total > 0:
-                    cpu_uso = round(100 * (1 - delta_idle / delta_total), 1)
-                else:
-                    cpu_uso = 0.0
+                cpu_uso = round(100 * (1 - delta_idle / delta_total), 1) if delta_total > 0 else 0.0
             else:
                 cpu_uso = 0.0
             cpu_anterior = cpu_actual
@@ -98,4 +82,4 @@ def correr_sistema(pids_compartidos, snapshot, intervalo, evento_apagado):
         except Exception:
             pass
 
-        time.sleep(intervalo)
+        time.sleep(intervalo_value.value)

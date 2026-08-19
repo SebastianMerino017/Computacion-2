@@ -24,7 +24,11 @@ TECLAS_VISTA = {
     ord('7'): 7, ord('g'): 7,
 }
 
-# Indices de pares de colores
+VISTA_A_CLAVE = {
+    1: 'resumen', 2: 'memoria', 3: 'fds',
+    4: 'threads', 5: 'senales', 6: 'scheduling', 7: 'sistema'
+}
+
 COLOR_NORMAL = 1
 COLOR_RUNNING = 2
 COLOR_ZOMBIE = 3
@@ -51,13 +55,13 @@ def color_por_estado(estado):
         return curses.color_pair(COLOR_NORMAL)
 
 
-def correr_display(snapshot_compartido, intervalo, evento_apagado):
-    curses.wrapper(loop_display, snapshot_compartido, intervalo, evento_apagado)
+def correr_display(snapshot_compartido, intervalo, evento_apagado, valores_intervalos, intervalos_minimos):
+    curses.wrapper(loop_display, snapshot_compartido, intervalo, evento_apagado, valores_intervalos, intervalos_minimos)
 
 
-def loop_display(stdscr, snapshot_compartido, intervalo, evento_apagado):
+def loop_display(stdscr, snapshot_compartido, intervalo, evento_apagado, valores_intervalos, intervalos_minimos):
     curses.curs_set(0)
-    stdscr.nodelay(True)
+    stdscr.timeout(100)
     iniciar_colores()
 
     vista_activa = 1
@@ -66,11 +70,16 @@ def loop_display(stdscr, snapshot_compartido, intervalo, evento_apagado):
         stdscr.clear()
         altura, ancho = stdscr.getmaxyx()
 
-        titulo = f"MONITOR DE PROCESOS | Vista: {VISTAS[vista_activa]} | teclas 1-7 | q=salir"
+        titulo = f"MONITOR DE PROCESOS | Vista: {VISTAS[vista_activa]} | teclas 1-7 | +/- intervalo | q=salir"
         stdscr.addstr(0, 0, titulo[:ancho-1], curses.color_pair(COLOR_HEADER))
         stdscr.addstr(1, 0, "-" * (ancho - 1), curses.color_pair(COLOR_SEPARADOR))
 
-        fila = 2
+        clave = VISTA_A_CLAVE.get(vista_activa)
+        if clave and clave in valores_intervalos:
+            intervalo_actual = valores_intervalos[clave].value
+            stdscr.addstr(2, 0, f"Intervalo: {intervalo_actual:.1f}s", curses.color_pair(COLOR_NORMAL))
+
+        fila = 3
 
         if vista_activa == 1:
             fila = dibujar_resumen(stdscr, snapshot_compartido, fila, altura, ancho)
@@ -94,8 +103,14 @@ def loop_display(stdscr, snapshot_compartido, intervalo, evento_apagado):
             evento_apagado.set()
         elif tecla in TECLAS_VISTA:
             vista_activa = TECLAS_VISTA[tecla]
-
-        time.sleep(intervalo)
+        elif tecla == ord('+') and clave in valores_intervalos:
+            valores_intervalos[clave].value = round(
+                valores_intervalos[clave].value + 0.5, 1)
+        elif tecla == ord('-') and clave in valores_intervalos:
+            minimo = intervalos_minimos.get(clave, 0.5)
+            nuevo = round(valores_intervalos[clave].value - 0.5, 1)
+            if nuevo >= minimo:
+                valores_intervalos[clave].value = nuevo
 
 
 def dibujar_resumen(stdscr, snapshot, fila, altura, ancho):

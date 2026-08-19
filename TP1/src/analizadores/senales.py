@@ -1,10 +1,9 @@
-# analizadores/senales.py - Analizador que extrae info de señales de cada proceso
+# analizadores/senales.py
 
 import time
 from procfs import leer_status
 
 
-# Mapa de número de señal a nombre
 NOMBRES_SENALES = {
     1: 'SIGHUP', 2: 'SIGINT', 3: 'SIGQUIT', 4: 'SIGILL',
     5: 'SIGTRAP', 6: 'SIGABRT', 7: 'SIGBUS', 8: 'SIGFPE',
@@ -18,12 +17,10 @@ NOMBRES_SENALES = {
 
 
 def decodificar_mascara(hex_str):
-    # Convierte una mascara hexadecimal a lista de nombres de señales activas
     try:
         mascara = int(hex_str, 16)
     except (ValueError, TypeError):
         return []
-
     senales_activas = []
     for bit in range(64):
         if mascara & (1 << bit):
@@ -33,7 +30,7 @@ def decodificar_mascara(hex_str):
     return senales_activas
 
 
-def correr_senales(pids_compartidos, snapshot, intervalo, evento_apagado):
+def correr_senales(pids_compartidos, snapshot, intervalo_value, evento_apagado):
     while not evento_apagado.is_set():
         datos_senales = {}
 
@@ -52,4 +49,4 @@ def correr_senales(pids_compartidos, snapshot, intervalo, evento_apagado):
         snapshot['senales'] = datos_senales
         snapshot['senales_ts'] = time.time()
 
-        time.sleep(intervalo)
+        time.sleep(intervalo_value.value)

@@ -1,10 +1,10 @@
-# analizadores/fds.py - Analizador que extrae los file descriptors abiertos de cada proceso
+# analizadores/fds.py
 
 import os
 import time
 
 
-def correr_fds(pids_compartidos, snapshot, intervalo, evento_apagado):
+def correr_fds(pids_compartidos, snapshot, intervalo_value, evento_apagado):
     while not evento_apagado.is_set():
         datos_fds = {}
 
@@ -33,7 +33,7 @@ def correr_fds(pids_compartidos, snapshot, intervalo, evento_apagado):
         snapshot['fds'] = datos_fds
         snapshot['fds_ts'] = time.time()
 
-        time.sleep(intervalo)
+        time.sleep(intervalo_value.value)
 
 
 def inferir_tipo(destino):
