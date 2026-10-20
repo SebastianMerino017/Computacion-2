@@ -3,13 +3,14 @@ import logging
 from contextlib import asynccontextmanager
 from typing import Optional
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from pydantic import BaseModel
 
 from src.cola import almacen
 from src.modelos import EstadoTarea, TipoTarea, Tarea
 from src.workers import iniciar_workers
 from src.senales import configurar_señales
+from src.eventos import gestor_eventos
 
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
@@ -103,6 +104,17 @@ async def cancelar_tarea(id: str):
 @app.get("/estadisticas")
 async def estadisticas():
     return almacen.estadisticas()
+
+
+@app.websocket("/eventos")
+async def websocket_eventos(websocket: WebSocket):
+    await gestor_eventos.conectar(websocket)
+    try:
+        await websocket.send_json({"tipo": "conectado", "mensaje": "Escuchando eventos de tareas"})
+        while True:
+            await websocket.receive_text()
+    except WebSocketDisconnect:
+        gestor_eventos.desconectar(websocket)
 
 
 if __name__ == "__main__":
