@@ -1,8 +1,11 @@
 import asyncio
 import time
+import logging
 from src.modelos import EstadoTarea, TipoTarea
 from src.cola import almacen
 from src.tareas import ejecutar_descargar, ejecutar_hashear, ejecutar_esperar
+
+logger = logging.getLogger(__name__)
 
 
 async def procesar_tarea(tarea_id: str, loop: asyncio.AbstractEventLoop) -> None:
@@ -34,14 +37,29 @@ async def procesar_tarea(tarea_id: str, loop: asyncio.AbstractEventLoop) -> None
     except TimeoutError:
         tarea.estado = EstadoTarea.FALLIDA
         tarea.error = f"Timeout después de {tarea.timeout} segundos"
+        await intentar_reintento(tarea, loop)
 
     except Exception as e:
         tarea.estado = EstadoTarea.FALLIDA
         tarea.error = str(e)
+        await intentar_reintento(tarea, loop)
 
     finally:
         tarea.finalizada_en = time.time()
         almacen.tasks_asyncio.pop(tarea_id, None)
+
+
+async def intentar_reintento(tarea, loop: asyncio.AbstractEventLoop) -> None:
+    if tarea.reintentos_realizados < tarea.max_reintentos:
+        tarea.reintentos_realizados += 1
+        # Backoff exponencial: 2^intento segundos (1s, 2s, 4s, 8s...)
+        espera = 2 ** (tarea.reintentos_realizados - 1)
+        logger.info(f"Reintentando tarea {tarea.id} en {espera}s (intento {tarea.reintentos_realizados}/{tarea.max_reintentos})")
+        await asyncio.sleep(espera)
+        tarea.estado = EstadoTarea.PENDIENTE
+        tarea.error = None
+        tarea.finalizada_en = None
+        await almacen.cola.put(tarea.id)
 
 
 async def worker(worker_id: int, loop: asyncio.AbstractEventLoop) -> None:

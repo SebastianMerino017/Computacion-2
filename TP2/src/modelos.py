@@ -24,6 +24,7 @@ class Tarea:
     tipo: TipoTarea
     parametros: dict
     timeout: float = 30.0
+    max_reintentos: int = 0
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
     estado: EstadoTarea = EstadoTarea.PENDIENTE
     creada_en: float = field(default_factory=time.time)
@@ -31,6 +32,7 @@ class Tarea:
     finalizada_en: Optional[float] = None
     resultado: Optional[Any] = None
     error: Optional[str] = None
+    reintentos_realizados: int = 0
 
     def a_dict(self) -> dict:
         return {
@@ -38,6 +40,8 @@ class Tarea:
             "tipo": self.tipo,
             "parametros": self.parametros,
             "timeout": self.timeout,
+            "max_reintentos": self.max_reintentos,
+            "reintentos_realizados": self.reintentos_realizados,
             "estado": self.estado,
             "creada_en": self.creada_en,
             "iniciada_en": self.iniciada_en,
@@ -45,3 +49,5 @@ class Tarea:
             "resultado": self.resultado,
             "error": self.error,
         }
+
+    

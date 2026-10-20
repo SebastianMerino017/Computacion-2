@@ -22,12 +22,10 @@ app_state = {
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # Arranque
     logger.info("Iniciando workers...")
     app_state["workers"] = await iniciar_workers(cantidad=5)
     configurar_señales(app_state)
 
-    # Verificar si existe un volcado previo
     import glob
     volcados = glob.glob("estado_*.json")
     if volcados:
@@ -35,7 +33,6 @@ async def lifespan(app: FastAPI):
 
     yield
 
-    # Apagado
     logger.info("Apagando workers...")
     for w in app_state["workers"]:
         w.cancel()
@@ -44,15 +41,12 @@ async def lifespan(app: FastAPI):
 app = FastAPI(title="Plataforma de Tareas Distribuidas", lifespan=lifespan)
 
 
-# --- Schemas de entrada ---
-
 class CrearTareaRequest(BaseModel):
     tipo: TipoTarea
     parametros: dict
     timeout: float = 30.0
+    max_reintentos: int = 0
 
-
-# --- Endpoints ---
 
 @app.post("/tareas", status_code=202)
 async def crear_tarea(request: CrearTareaRequest):
@@ -62,7 +56,8 @@ async def crear_tarea(request: CrearTareaRequest):
     tarea = Tarea(
         tipo=request.tipo,
         parametros=request.parametros,
-        timeout=request.timeout
+        timeout=request.timeout,
+        max_reintentos=request.max_reintentos
     )
     almacen.agregar(tarea)
     await almacen.cola.put(tarea.id)
@@ -93,12 +88,10 @@ async def cancelar_tarea(id: str):
     if tarea.estado in (EstadoTarea.COMPLETADA, EstadoTarea.FALLIDA, EstadoTarea.CANCELADA):
         raise HTTPException(status_code=400, detail=f"No se puede cancelar una tarea en estado {tarea.estado}")
 
-    # Si está en ejecución, cancelar el asyncio.Task
     task = almacen.tasks_asyncio.get(id)
     if task:
         task.cancel()
     else:
-        # Todavía está en la cola, marcarla como cancelada
         import time
         tarea.estado = EstadoTarea.CANCELADA
         tarea.error = "Cancelada antes de ejecutarse"
